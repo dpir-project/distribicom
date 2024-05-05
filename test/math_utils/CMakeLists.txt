@@ -9,7 +9,7 @@ create_test_sourcelist(Tests
         query_expander_test.cpp
         mult_benchmark.cpp
         frievalds_test.cpp
-        async_mat_mult.cpp
+#        async_mat_mult.cpp deprecated
         threadpool_test.cpp
         thrashing_test.cpp
         benchmarks.cpp
@@ -28,7 +28,7 @@ target_link_libraries(distribicom_math_utils_tests multiplication_utils distribi
 
 # remove the test driver source file
 set(TestsToRun ${Tests})
-remove(TestsToRun math_utils_tests.cpp)
+list(REMOVE_ITEM TestsToRun math_utils_tests.cpp)
 
 # Add all the ADD_TEST for each test
 foreach (test ${TestsToRun})
